@@ -1,0 +1,22 @@
+## Configuration
+
+
+## Base export dir
+BASEDIR="/dir"
+
+## Source zimbra host
+# Leave empty if backup script runs directly on zimbra server
+ZMHOST="ip_host"
+
+## ***** Normally you don't need to touch anything below this line ****
+
+## File with the list of mailboxes to migrate
+MAIL_LIST_FILE="$BASEDIR/email.txt"
+
+## Connection command to connect to zimbra server
+if [ "x$ZMHOST" != "x" ]; then
+   rcmd="ssh zimbra@$ZMHOST"
+else
+   rcmd=""
+fi
+
